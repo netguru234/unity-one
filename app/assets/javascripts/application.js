@@ -18,7 +18,7 @@
 
 $(function () {
   // Mobile Toggler
-  let mobileNav = $('.mobile-nav')
+  const mobileNav = $('.mobile-nav')
 
   $('.toggler').click(function (e) {
     e.preventDefault()
