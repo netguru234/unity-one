@@ -1,0 +1,42 @@
+<picture class="top_left">
+  <source media="(min-width:993px)" srcset="<%= image_path('img/image.png') %>" />
+  <source media="(min-width:768px)" srcset="<%= image_path("img/eli_mobile.png") %>" />
+  <img src="img/eli_mobile.png" alt="Eclipse" style="width: auto;" />
+</picture>
+<picture class="delivery">
+  <!-- <source media="(min-width:px)" srcset="img/eli_mobile.png"> -->
+  <source media="(min-width:993px)" srcset="<%= image_path('img/delivery.png') %>" />
+  <source media="(min-width:768px)" srcset="<%= image_path('img/delivery_smaller.png') %>" />
+  <img src="<%= image_path('img/delivery_smaller.png') %>" alt="Delivery" style="width: auto;" />
+  <!-- <source class="d-none d-xl-block img-fluid" src=""> -->
+</picture>
+
+
+<!-- content start -->
+<div class="container track-page">
+  <div class="row">
+    <section class="col-lg-6 mb-3 mt-md-5">
+      <h2 class="orange d-none d-md-block">Track your Order</h2>
+      <h2 class="orange d-md-none">Track your</h2>
+      <h2 class="orange d-md-none">Order</h2>
+      <form class="pr-4">
+        <div class="">
+          <input class="" type="text" name="" placeholder="Track Number" />
+        </div>
+        <div class="mt-2">
+          <a href="./result-page.html"
+            ><input
+              class="btn_orange track"
+              type="button"
+              name=""
+              value="Track"
+          /></a>
+        </div>
+      </form>
+      <div class="mt-5">
+        <img class="img-fluid" src="img/icon.png" />
+      </div>
+    </section>
+  </div>
+</div>
+<!-- content end -->

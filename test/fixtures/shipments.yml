@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_name: MyString
+  sender_address: MyString
+  sender_email: MyString
+  sender_phone: MyString
+  receiver_name: MyString
+  receiver_address: MyString
+  receiver_email: MyString
+  receiver_phone: MyString
+  shipped_from: MyString
+  tracking_number: MyString
+  destination: MyString
+
+two:
+  sender_name: MyString
+  sender_address: MyString
+  sender_email: MyString
+  sender_phone: MyString
+  receiver_name: MyString
+  receiver_address: MyString
+  receiver_email: MyString
+  receiver_phone: MyString
+  shipped_from: MyString
+  tracking_number: MyString
+  destination: MyString
