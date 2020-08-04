@@ -19,20 +19,19 @@
       <h2 class="orange d-none d-md-block">Track your Order</h2>
       <h2 class="orange d-md-none">Track your</h2>
       <h2 class="orange d-md-none">Order</h2>
-      <form class="pr-4">
+      <form class="pr-4" action="<%= search_path %>" method="get" id="search-form">
+		  <div class="">
         <div class="">
-          <input class="" type="text" name="" placeholder="Track Number" />
+          <!-- <input class="" type="text" name="" placeholder="Track Number" /> -->
+          <%= text_field_tag 'search', params[:search], placeholder: "Enter Tracking Number", autofocus: true, class: 'form-control' %>
         </div>
         <div class="mt-2">
-          <a href="./result-page.html"
-            ><input
-              class="btn_orange track"
-              type="button"
-              name=""
-              value="Track"
-          /></a>
+          <%= button_tag "Track Shipment", class: "btn_orange track", :name => nil %>
         </div>
-      </form>
+		  </div>
+		  <!-- <button type="submit" class="btn btn-primary">Track Shipment</button> -->
+		</form>
+      
       <div class="mt-5">
         <img class="img-fluid" src="img/icon.png" />
       </div>
