@@ -1,0 +1,50 @@
+<!-- main section start -->
+<section class="container-fluid main" style="margin-top: 170px;">
+  <div class="row">
+    <div class="col-md-10 ml-auto col-lg-6">
+      <div class="result-text">
+        <div>
+          <h1 class="font-wight-bolder h1-1">
+            Your Order has been Tracked
+          </h1>
+          <div class="pb-4">
+            <img src="img/chart.png" alt="" style="width: 100%;" />
+          </div>
+          <div class="container pt-5">
+            <div style="position: relative; display: inline-block;">
+              <% @shipments.each do |shipment| %>
+                <% if shipment.histories.any? %>
+                    <% history = shipment.histories.last %>
+                    <h1 class="relative lato">Shipped, <%= history.scan_history %></h1>
+                <% end %>
+              <% end %>
+              <!-- <h1 class="relative lato">Shipped, <%#= Awaiting Transit %></h1> -->
+              <img class="range" src="./img/rangex.png" alt="" />
+            </div>
+            <img src="img/range.png" alt="" style="width: 100%;" />
+            <p>
+              <small class="lato">Scheduled Delivery</small>
+            </p>
+            <% @shipments.each do |shipment| %>
+            <h1 class="lato"><%= shipment.delivery_date.strftime("%A") %></h1>
+            <p class="lato"><%= shipment.delivery_date.strftime("%D") %></p>
+            <% end %>
+
+            <p>
+              <small>Location</small>
+            </p>
+            <% @shipments.each do |shipment| %>
+              <p class="lato"><%= "#{shipment.receiver_address}, #{shipment.destination}" %></p>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      class="col-lg-6 side-img"
+      src="./img/delivery-guy.svg"
+      alt="delivery guy image"
+    />
+  </div>
+</section>

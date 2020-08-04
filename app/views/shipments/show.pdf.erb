@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <style>
+      body {
+        background: rgba(0, 10, 0, .36);
+      }
+
+      .paid img {
+        width: 100px;
+        height: 100px;
+      }
+
+        .text-center {
+          text-align: center;
+          // font-size: 4rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+
+        h6 {
+          margin: 2px 0;
+          font-family: 'Niconne', cursive;
+        }
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        address {
+          font-size: 1.3rem;
+          font-family: 'Niconne', cursive;
+        }
+    </style>
+  </head>
+  <body onload='number_pages'>
+    <div id="header" class="text-center">
+      <h2>Shipment Receipt</h2>
+      <%= image_tag wicked_pdf_asset_base64('img/logo-white.svg') %> <strong style="font-size: 1.7rem; color: #fff;">GLOBAL EXPRESS DELIVERY</strong> <br>
+    </div>
+    <address class="text-center">
+      <strong>
+        <small>Email: firstworldd@aol.com</small> <br>
+        <small>Phone: +17784025569 (Head office) / +447438481173 (Branch office)</small> <br>
+        <small>Web: https://firstworlddelivery.com</small> <br>
+      </strong>
+    </address>
+    <br>
+    <div class="paid text-center">
+      <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+      <%= image_tag wicked_pdf_asset_base64('img/paid2.jpg') %>
+      <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+      <%= image_tag wicked_pdf_asset_base64('img/paid2.jpg') %>
+    </div>
+    <div id="content" class="text-center">
+      <p><strong>Ship Date:</strong> <%= @shipment.created_at.strftime("%d/%m/%Y") %></p>
+      <p><strong>Tracking Number:</strong> <%= @shipment.tracking_number %></p>
+      <div class="paid text-center">
+        <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+        <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+        <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+        <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+      </div>
+      <hr>
+      <h6>Sender's Details</h6>
+        <p>Sender's Name: <%= @shipment.sender_name %></p>
+        <p>Sender's Phone: <%= @shipment.sender_phone %></p>
+        <p>Sender's Email: <%= @shipment.sender_email %></p>
+        <p>Sender's Address: <%= @shipment.sender_address %>, <%= @shipment.shipped_from %></p>
+      <hr>
+      <h6>Receiver's Details</h6>
+        <p>Receiver's Name: <%= @shipment.receiver_name %></p>
+        <p>Receiver's Phone: <%= @shipment.receiver_phone %></p>
+        <p>Receiver's Email: <%= @shipment.receiver_email %></p>
+        <p>Receiver's Address: <%= @shipment.receiver_address %>, <%= @shipment.destination %></p>
+        <div class="paid text-center">
+          <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+          <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+          <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+          <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
+        </div>
+      <%#= image_tag wicked_pdf_asset_base64('barcode.png') %>
+      <%#= wicked_pdf_image_tag "https://img2.pngio.com/barcode-design-element-transparent-png-svg-vector-file-barcode-design-png-512_512.png" %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
