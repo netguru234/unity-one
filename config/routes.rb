@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   devise_scope :user do
     get "/login" => "devise/sessions#new" # custom path to login/sign_in
   end
+  devise_for :users
   resources :shipments do
     resources :histories
   end
