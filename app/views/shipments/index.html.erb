@@ -45,11 +45,8 @@
               <br>
 
 
-              <% if user_signed_in? %>
-                <%= link_to 'New Shipment', new_shipment_path, class: "btn btn-danger" %>
-              <% else %>
-                <%= link_to 'Login', new_user_session_path, class: "btn btn-danger" %>
-              <% end %>
+              <%= link_to 'New Shipment', new_shipment_path, class: "btn btn-danger" %>
+              
                <div class="clearfix"></div>
             </div>
         </div>
