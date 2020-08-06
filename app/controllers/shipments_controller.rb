@@ -1,5 +1,5 @@
 class ShipmentsController < ApplicationController
-  skip_before_filter :verify_authenticity_token, :only => :create
+  
   before_action :set_shipment, only: [:show, :edit, :update, :destroy]
   before_action :ensure_admin, :except => [:track, :search]
   before_action :authenticate_user!, :except => [:track, :search]
