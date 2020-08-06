@@ -1,0 +1,32 @@
+body {
+  background: rgba(0, 10, 0, .36);
+}
+
+.paid img {
+  width: 100px;
+  height: 100px;
+}
+
+  .text-center {
+    text-align: center;
+    // font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  h6 {
+    margin: 2px 0;
+    font-family: 'Verdana', cursive;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  address {
+    font-size: 1.3rem;
+    font-family: 'Verdana', cursive;
+    font-weight: bolder;
+  }
