@@ -25,7 +25,7 @@
 
         h6 {
           margin: 2px 0;
-          font-family: 'Niconne', cursive;
+          font-family: 'Montesserat', cursive;
         }
 
         h2 {
@@ -34,7 +34,8 @@
 
         address {
           font-size: 1.3rem;
-          font-family: 'Niconne', cursive;
+          font-family: 'Tahoma MS', cursive;
+          font-weight: bolder;
         }
     </style>
   </head>
@@ -45,9 +46,9 @@
     </div>
     <address class="text-center">
       <strong>
-        <small>Email: firstworldd@aol.com</small> <br>
-        <small>Phone: +17784025569 (Head office) / +447438481173 (Branch office)</small> <br>
-        <small>Web: https://firstworlddelivery.com</small> <br>
+        <small>Email: infologistixsexpressherokuapp@aol.com</small> <br>
+        <small>Phone: +44 736 561 9844</small> <br>
+        <small>Web: https://www.logistixglobalexpress.com</small> <br>
       </strong>
     </address>
     <br>
@@ -68,10 +69,12 @@
       </div>
       <hr>
       <h6>Sender's Details</h6>
-        <p>Sender's Name: <%= @shipment.sender_name %></p>
-        <p>Sender's Phone: <%= @shipment.sender_phone %></p>
-        <p>Sender's Email: <%= @shipment.sender_email %></p>
-        <p>Sender's Address: <%= @shipment.sender_address %>, <%= @shipment.shipped_from %></p>
+        <strong>
+          <p>Sender's Name: <%= @shipment.sender_name %></p>
+          <p>Sender's Phone: <%= @shipment.sender_phone %></p>
+          <p>Sender's Email: <%= @shipment.sender_email %></p>
+          <p>Sender's Address: <%= @shipment.sender_address %>, <%= @shipment.shipped_from %></p>
+        </strong>
       <hr>
       <h6>Receiver's Details</h6>
         <p>Receiver's Name: <%= @shipment.receiver_name %></p>
@@ -84,7 +87,7 @@
           <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
           <%= image_tag wicked_pdf_asset_base64('img/paid.jpg') %>
         </div>
-      <%#= image_tag wicked_pdf_asset_base64('barcode.png') %>
+      <%= image_tag wicked_pdf_asset_base64('barcode.png') %>
       <%#= wicked_pdf_image_tag "https://img2.pngio.com/barcode-design-element-transparent-png-svg-vector-file-barcode-design-png-512_512.png" %>
       <%= yield %>
     </div>
